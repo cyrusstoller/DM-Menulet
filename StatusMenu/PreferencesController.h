@@ -1,5 +1,5 @@
 //
-//  main.m
+//  PreferencesController.h
 //  StatusMenu
 //
 //  Created by Cyrus Stoller on 5/10/12.
@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, char *argv[])
-{
-    return NSApplicationMain(argc, (const char **)argv);
-}
+@interface PreferencesController : NSWindowController
+
+@end

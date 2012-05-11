@@ -18,6 +18,8 @@
 		0CE31939155C61160070329B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CE31937155C61160070329B /* InfoPlist.strings */; };
 		0CE3193B155C61160070329B /* StatusMenuTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 0CE3193A155C61160070329B /* StatusMenuTests.h */; };
 		0CE3193D155C61160070329B /* StatusMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE3193C155C61160070329B /* StatusMenuTests.m */; };
+		0CE3194F155C7EB70070329B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE3194E155C7EB70070329B /* Preferences.xib */; };
+		0CE31952155C7EE60070329B /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31951155C7EE60070329B /* PreferencesController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,20 +38,23 @@
 		0CE31914155C61160070329B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0CE31915155C61160070329B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0CE31916155C61160070329B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0CE31919155C61160070329B /* StatusMenu-Info.plist */ = {isa = PBXFileReference; path = "StatusMenu-Info.plist"; sourceTree = "<group>"; };
+		0CE31919155C61160070329B /* StatusMenu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StatusMenu-Info.plist"; sourceTree = "<group>"; };
 		0CE3191B155C61160070329B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CE3191D155C61160070329B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0CE3191F155C61160070329B /* StatusMenu-Prefix.pch */ = {isa = PBXFileReference; path = "StatusMenu-Prefix.pch"; sourceTree = "<group>"; };
+		0CE3191F155C61160070329B /* StatusMenu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StatusMenu-Prefix.pch"; sourceTree = "<group>"; };
 		0CE31921155C61160070329B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		0CE31923155C61160070329B /* StatusMenuAppDelegate.h */ = {isa = PBXFileReference; path = StatusMenuAppDelegate.h; sourceTree = "<group>"; };
+		0CE31923155C61160070329B /* StatusMenuAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusMenuAppDelegate.h; sourceTree = "<group>"; };
 		0CE31924155C61160070329B /* StatusMenuAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusMenuAppDelegate.m; sourceTree = "<group>"; };
 		0CE31927155C61160070329B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0CE3192E155C61160070329B /* StatusMenuTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatusMenuTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE3192F155C61160070329B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		0CE31936155C61160070329B /* StatusMenuTests-Info.plist */ = {isa = PBXFileReference; path = "StatusMenuTests-Info.plist"; sourceTree = "<group>"; };
+		0CE31936155C61160070329B /* StatusMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StatusMenuTests-Info.plist"; sourceTree = "<group>"; };
 		0CE31938155C61160070329B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CE3193A155C61160070329B /* StatusMenuTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusMenuTests.h; sourceTree = "<group>"; };
 		0CE3193C155C61160070329B /* StatusMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusMenuTests.m; sourceTree = "<group>"; };
+		0CE3194E155C7EB70070329B /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		0CE31950155C7EE60070329B /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PreferencesController.h; sourceTree = "<group>"; };
+		0CE31951155C7EE60070329B /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,7 @@
 			children = (
 				0CE31923155C61160070329B /* StatusMenuAppDelegate.h */,
 				0CE31924155C61160070329B /* StatusMenuAppDelegate.m */,
+				0CE31954155C7F1F0070329B /* Preferences */,
 				0CE31926155C61160070329B /* MainMenu.xib */,
 				0CE31918155C61160070329B /* Supporting Files */,
 			);
@@ -152,6 +158,16 @@
 				0CE31937155C61160070329B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0CE31954155C7F1F0070329B /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				0CE3194E155C7EB70070329B /* Preferences.xib */,
+				0CE31950155C7EE60070329B /* PreferencesController.h */,
+				0CE31951155C7EE60070329B /* PreferencesController.m */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +214,9 @@
 /* Begin PBXProject section */
 		0CE31904155C61150070329B /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Cyrus Stoller";
+			};
 			buildConfigurationList = 0CE31907155C61150070329B /* Build configuration list for PBXProject "StatusMenu" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -224,6 +243,7 @@
 				0CE3191C155C61160070329B /* InfoPlist.strings in Resources */,
 				0CE31922155C61160070329B /* Credits.rtf in Resources */,
 				0CE31928155C61160070329B /* MainMenu.xib in Resources */,
+				0CE3194F155C7EB70070329B /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +281,7 @@
 			files = (
 				0CE3191E155C61160070329B /* main.m in Sources */,
 				0CE31925155C61160070329B /* StatusMenuAppDelegate.m in Sources */,
+				0CE31952155C7EE60070329B /* PreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +453,7 @@
 				0CE31942155C61160070329B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CE31943155C61160070329B /* Build configuration list for PBXNativeTarget "StatusMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +462,7 @@
 				0CE31945155C61160070329B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

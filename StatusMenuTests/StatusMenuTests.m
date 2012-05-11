@@ -3,7 +3,7 @@
 //  StatusMenuTests
 //
 //  Created by Cyrus Stoller on 5/10/12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 Cyrus Stoller. All rights reserved.
 //
 
 #import "StatusMenuTests.h"
