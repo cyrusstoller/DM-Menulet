@@ -13,4 +13,8 @@ build/*
 !default.xcworkspace
 xcuserdata
 profile
+<<<<<<< HEAD
 *.moved-aside
+=======
+*.moved-aside
+>>>>>>> Added gitignore
