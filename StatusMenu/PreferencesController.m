@@ -68,6 +68,8 @@
     [[self window] setContentSize:[general_prefs_view frame].size];
     [[[self window] contentView] addSubview:general_prefs_view];
     [[[self window] contentView] setWantsLayer:YES];
+    [toolbar setSelectedItemIdentifier:@"General"];
+    
 }
 
 - (IBAction)switchView:(id)sender{

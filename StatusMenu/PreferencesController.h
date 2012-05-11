@@ -12,6 +12,8 @@
     IBOutlet NSView *general_prefs_view;
     IBOutlet NSView *account_prefs_view;
     
+    IBOutlet NSToolbar *toolbar;
+    
     int currentViewTag;
 }
     
