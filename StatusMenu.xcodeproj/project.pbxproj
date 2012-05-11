@@ -20,6 +20,7 @@
 		0CE3193D155C61160070329B /* StatusMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE3193C155C61160070329B /* StatusMenuTests.m */; };
 		0CE3194F155C7EB70070329B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE3194E155C7EB70070329B /* Preferences.xib */; };
 		0CE31952155C7EE60070329B /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE31951155C7EE60070329B /* PreferencesController.m */; };
+		0CE31960155CBF4B0070329B /* NewNSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE3195F155CBF4B0070329B /* NewNSApplication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +54,10 @@
 		0CE3193A155C61160070329B /* StatusMenuTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusMenuTests.h; sourceTree = "<group>"; };
 		0CE3193C155C61160070329B /* StatusMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusMenuTests.m; sourceTree = "<group>"; };
 		0CE3194E155C7EB70070329B /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
-		0CE31950155C7EE60070329B /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PreferencesController.h; sourceTree = "<group>"; };
+		0CE31950155C7EE60070329B /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		0CE31951155C7EE60070329B /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		0CE3195E155CBF4A0070329B /* NewNSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewNSApplication.h; sourceTree = "<group>"; };
+		0CE3195F155CBF4B0070329B /* NewNSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewNSApplication.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				0CE31954155C7F1F0070329B /* Preferences */,
 				0CE31926155C61160070329B /* MainMenu.xib */,
 				0CE31918155C61160070329B /* Supporting Files */,
+				0CE3195E155CBF4A0070329B /* NewNSApplication.h */,
+				0CE3195F155CBF4B0070329B /* NewNSApplication.m */,
 			);
 			path = StatusMenu;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				0CE3191E155C61160070329B /* main.m in Sources */,
 				0CE31925155C61160070329B /* StatusMenuAppDelegate.m in Sources */,
 				0CE31952155C7EE60070329B /* PreferencesController.m in Sources */,
+				0CE31960155CBF4B0070329B /* NewNSApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
