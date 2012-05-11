@@ -8,6 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PreferencesController : NSWindowController
+@interface PreferencesController : NSWindowController{
+    IBOutlet NSView *general_prefs_view;
+    IBOutlet NSView *account_prefs_view;
+    
+    int currentViewTag;
+}
+    
+- (IBAction)switchView:(id)sender;
 
 @end

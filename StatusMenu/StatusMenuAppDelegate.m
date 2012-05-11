@@ -16,6 +16,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    NSDictionary *appDefaults = [NSDictionary
+                                 dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"CacheDataAgressively"];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 }
 
 -(void)awakeFromNib{
@@ -38,7 +41,7 @@
 
 -(IBAction)openPreferences:(id)sender{
     if (!_preferencesController) {
-        _preferencesController = [[PreferencesController alloc] initWithWindowNibName:@"Preferences"];
+        _preferencesController = [[PreferencesController alloc] init];
     }    
     
     //    To get this to work properly I had to set LSUIElement to True in the plist

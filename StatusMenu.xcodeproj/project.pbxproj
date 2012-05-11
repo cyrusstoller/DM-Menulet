@@ -220,6 +220,7 @@
 		0CE31904155C61150070329B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Cyrus Stoller";
 			};
 			buildConfigurationList = 0CE31907155C61150070329B /* Build configuration list for PBXProject "StatusMenu" */;
