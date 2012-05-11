@@ -8,6 +8,7 @@
 
 #import "StatusMenuAppDelegate.h"
 #import "PreferencesController.h"
+#import "AboutController.h"
 
 @implementation StatusMenuAppDelegate
 
@@ -49,6 +50,15 @@
     [NSApp activateIgnoringOtherApps:YES];
     [_preferencesController.window makeKeyAndOrderFront:self];
     [_preferencesController showWindow:self];    
+}
+
+-(IBAction)openAbout:(id)sender{
+    if (!_aboutController) {
+        _aboutController = [[AboutController alloc] init];
+    }
+    [NSApp activateIgnoringOtherApps:YES];
+    [_aboutController.window makeKeyAndOrderFront:self];
+    [_aboutController showWindow:self];
 }
 
 -(IBAction)quit:(id)sender{

@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">0</int>
 		<string key="IBDocument.SystemVersion">10K549</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1617</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
 		<string key="IBDocument.AppKitVersion">1038.36</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1617</string>
+			<string key="NS.object.0">1938</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -21,11 +21,8 @@
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.Metadata">
-			<bool key="EncodedWithXMLCoder">YES</bool>
-			<object class="NSArray" key="dict.sortedKeys" id="0">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-			</object>
-			<reference key="dict.values" ref="0"/>
+			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
+			<integer value="1" key="NS.object.0"/>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.RootObjects" id="1048">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -72,6 +69,7 @@
 					</object>
 					<object class="NSMenuItem" id="652219334">
 						<reference key="NSMenu" ref="635178408"/>
+						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
 						<string key="NSTitle"/>
 						<string key="NSKeyEquiv"/>
@@ -105,6 +103,7 @@
 					</object>
 					<object class="NSMenuItem" id="446379491">
 						<reference key="NSMenu" ref="635178408"/>
+						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
 						<string key="NSTitle"/>
 						<string key="NSKeyEquiv"/>
@@ -146,6 +145,7 @@
 					</object>
 					<object class="NSMenuItem" id="934646113">
 						<reference key="NSMenu" ref="635178408"/>
+						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
 						<string key="NSTitle"/>
 						<string key="NSKeyEquiv"/>
@@ -281,13 +281,23 @@
 					</object>
 					<int key="connectionID">689</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openAbout:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="612123633"/>
+					</object>
+					<int key="connectionID">690</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBObjectRecord">
 						<int key="objectID">0</int>
-						<reference key="object" ref="0"/>
+						<object class="NSArray" key="object" id="0">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
 						<reference key="children" ref="1048"/>
 						<nil key="parent"/>
 					</object>
@@ -505,7 +515,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">689</int>
+			<int key="maxID">690</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -520,11 +530,9 @@
 							<string>openDataMustard:</string>
 							<string>openDataMustardFolder:</string>
 							<string>openPreferences:</string>
-							<string>quit:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -537,7 +545,6 @@
 							<string>openDataMustard:</string>
 							<string>openDataMustardFolder:</string>
 							<string>openPreferences:</string>
-							<string>quit:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -551,10 +558,6 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">openPreferences:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">quit:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>
@@ -603,10 +606,6 @@
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<real value="0.0" key="NS.object.0"/>
-		</object>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
-			<integer value="1060" key="NS.object.0"/>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.InterfaceBuilder3</string>

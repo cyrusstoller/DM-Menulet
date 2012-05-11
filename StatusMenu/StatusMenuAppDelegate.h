@@ -9,12 +9,14 @@
 #import <Cocoa/Cocoa.h>
 
 @class PreferencesController;
+@class AboutController;
 
 @interface StatusMenuAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
     IBOutlet NSMenu *statusMenu;
     NSStatusItem *statusItem;
     PreferencesController *_preferencesController;
+    AboutController *_aboutController;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -23,6 +25,7 @@
 -(IBAction)openDataMustardFolder:(id)sender;
 
 -(IBAction)openPreferences:(id)sender;
+-(IBAction)openAbout:(id)sender;
 -(IBAction)quit:(id)sender;
 
 @end

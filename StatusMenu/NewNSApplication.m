@@ -44,7 +44,6 @@
 					return;
 			}
             else if ([[event charactersIgnoringModifiers] isEqualToString:@"w"]){
-                NSLog(@"here");
                 if ([self sendAction:@selector(close) to:[self keyWindow] from:self])
 					return;
             }                

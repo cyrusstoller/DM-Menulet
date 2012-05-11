@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CDE3FB7155DD12F001E7360 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDE3FB6155DD12F001E7360 /* About.xib */; };
+		0CDE3FBA155DD890001E7360 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE3FB9155DD890001E7360 /* AboutController.m */; };
 		0CE31912155C61160070329B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE31911155C61160070329B /* Cocoa.framework */; };
 		0CE3191C155C61160070329B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CE3191A155C61160070329B /* InfoPlist.strings */; };
 		0CE3191E155C61160070329B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE3191D155C61160070329B /* main.m */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CDE3FB6155DD12F001E7360 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
+		0CDE3FB8155DD890001E7360 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
+		0CDE3FB9155DD890001E7360 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
 		0CE3190D155C61160070329B /* StatusMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatusMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE31911155C61160070329B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0CE31914155C61160070329B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -81,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CDE3FBB155DD897001E7360 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				0CDE3FB6155DD12F001E7360 /* About.xib */,
+				0CDE3FB8155DD890001E7360 /* AboutController.h */,
+				0CDE3FB9155DD890001E7360 /* AboutController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		0CE31902155C61150070329B = {
 			isa = PBXGroup;
 			children = (
@@ -123,10 +138,11 @@
 		0CE31917155C61160070329B /* StatusMenu */ = {
 			isa = PBXGroup;
 			children = (
+				0CE31926155C61160070329B /* MainMenu.xib */,
 				0CE31923155C61160070329B /* StatusMenuAppDelegate.h */,
 				0CE31924155C61160070329B /* StatusMenuAppDelegate.m */,
+				0CDE3FBB155DD897001E7360 /* About */,
 				0CE31954155C7F1F0070329B /* Preferences */,
-				0CE31926155C61160070329B /* MainMenu.xib */,
 				0CE31918155C61160070329B /* Supporting Files */,
 				0CE3195E155CBF4A0070329B /* NewNSApplication.h */,
 				0CE3195F155CBF4B0070329B /* NewNSApplication.m */,
@@ -250,6 +266,7 @@
 				0CE31922155C61160070329B /* Credits.rtf in Resources */,
 				0CE31928155C61160070329B /* MainMenu.xib in Resources */,
 				0CE3194F155C7EB70070329B /* Preferences.xib in Resources */,
+				0CDE3FB7155DD12F001E7360 /* About.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +306,7 @@
 				0CE31925155C61160070329B /* StatusMenuAppDelegate.m in Sources */,
 				0CE31952155C7EE60070329B /* PreferencesController.m in Sources */,
 				0CE31960155CBF4B0070329B /* NewNSApplication.m in Sources */,
+				0CDE3FBA155DD890001E7360 /* AboutController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
