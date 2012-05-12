@@ -22,19 +22,7 @@
 //        NSLog(@"defaults\n");
 //        NSLog(@"user: %@", [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME_KEY]);
 //        NSLog(@"pass: %@", [[NSUserDefaults standardUserDefaults] stringForKey:PASSWORD_KEY]);
-
         
-        [username setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:USERNAME_KEY]];
-        [password setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:PASSWORD_KEY]];
-        
-        [username setDelegate:self];
-        [password setDelegate:self];
-        
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc addObserver:self
-               selector:@selector(textDidEndEditing:)
-                   name: NSControlTextDidChangeNotification
-                 object:username];
     }
     
     return self;
@@ -54,12 +42,31 @@
     [defaults synchronize];
 }
 
-//- (void)windowDidLoad
-//{
-//    [super windowDidLoad];
-//    
-//    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-//}
+- (void)windowDidLoad
+{
+    [super windowDidLoad];
+    
+    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    NSString *username_text = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] 
+                                                                stringForKey:USERNAME_KEY]];
+    NSString *password_text = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] 
+                                                                stringForKey:PASSWORD_KEY]];
+    [username setStringValue:username_text];
+    [password setStringValue:password_text];
+    
+    [username setDelegate:self];
+    [password setDelegate:self];
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self
+           selector:@selector(textDidEndEditing:)
+               name: NSControlTextDidChangeNotification
+             object:username];
+    [nc addObserver:self
+           selector:@selector(textDidEndEditing:)
+               name: NSControlTextDidChangeNotification
+             object:password];
+}
 
 
 - (NSRect)newFrameForNewContentView:(NSView *) view{
