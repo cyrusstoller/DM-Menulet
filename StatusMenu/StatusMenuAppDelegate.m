@@ -16,10 +16,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    _userDefaults = [NSUserDefaults standardUserDefaults];
     // Insert code here to initialize your application
     NSDictionary *appDefaults = [NSDictionary
                                  dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"CacheDataAgressively"];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    [_userDefaults registerDefaults:appDefaults];
 }
 
 -(void)awakeFromNib{

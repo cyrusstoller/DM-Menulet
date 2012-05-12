@@ -116,7 +116,6 @@
 							<string key="NSFrame">{{122, 51}, {178, 17}}</string>
 							<reference key="NSSuperview" ref="465522442"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="621739665">
 								<int key="NSCellFlags">68288064</int>
@@ -280,7 +279,7 @@
 				<reference key="dict.values" ref="1002"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">39</int>
+			<int key="maxID">41</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -288,17 +287,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">AboutController</string>
 					<string key="superclassName">NSWindowController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">openWebsite:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">openWebsite:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">openWebsite:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/AboutController.h</string>

@@ -137,12 +137,13 @@
 					<string key="NSFrameSize">{506, 109}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
+					<reference key="NSNextKeyView"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{1e+13, 1e+13}</string>
 			</object>
 			<object class="NSCustomView" id="312370597">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -151,7 +152,6 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{151, 156}, {89, 32}}</string>
 						<reference key="NSSuperview" ref="312370597"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="686048165">
 							<int key="NSCellFlags">67239424</int>
@@ -173,7 +173,6 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{506, 266}</string>
-				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="908980150"/>
 				<string key="NSClassName">NSView</string>
 			</object>
@@ -187,6 +186,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{38, 97}, {427, 17}}</string>
 						<reference key="NSSuperview" ref="686826207"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="759992678"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="317264962">
@@ -220,7 +220,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{41, 35}, {170, 22}}</string>
 						<reference key="NSSuperview" ref="686826207"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSecureTextFieldCell" key="NSCell" id="240624968">
 							<int key="NSCellFlags">343014976</int>
@@ -256,6 +256,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{41, 67}, {170, 22}}</string>
 						<reference key="NSSuperview" ref="686826207"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="158685208"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="855998060">
@@ -273,6 +274,7 @@
 				</object>
 				<string key="NSFrameSize">{506, 141}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="994164824"/>
 				<string key="NSClassName">NSView</string>
 			</object>
@@ -322,19 +324,27 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">general_toolbar</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="943083054"/>
-					</object>
-					<int key="connectionID">83</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">toolbar</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="254142189"/>
 					</object>
 					<int key="connectionID">84</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">password</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="158685208"/>
+					</object>
+					<int key="connectionID">85</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">username</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="759992678"/>
+					</object>
+					<int key="connectionID">86</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -557,7 +567,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">84</int>
+			<int key="maxID">86</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -582,13 +592,17 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>account_prefs_view</string>
 							<string>general_prefs_view</string>
+							<string>password</string>
 							<string>toolbar</string>
+							<string>username</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSView</string>
 							<string>NSView</string>
+							<string>NSSecureTextField</string>
 							<string>NSToolbar</string>
+							<string>NSTextField</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -597,7 +611,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>account_prefs_view</string>
 							<string>general_prefs_view</string>
+							<string>password</string>
 							<string>toolbar</string>
+							<string>username</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -610,8 +626,16 @@
 								<string key="candidateClassName">NSView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">password</string>
+								<string key="candidateClassName">NSSecureTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">toolbar</string>
 								<string key="candidateClassName">NSToolbar</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">username</string>
+								<string key="candidateClassName">NSTextField</string>
 							</object>
 						</object>
 					</object>

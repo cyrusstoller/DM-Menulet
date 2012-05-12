@@ -17,6 +17,7 @@
     NSStatusItem *statusItem;
     PreferencesController *_preferencesController;
     AboutController *_aboutController;
+    NSUserDefaults *_userDefaults;
 }
 
 @property (assign) IBOutlet NSWindow *window;

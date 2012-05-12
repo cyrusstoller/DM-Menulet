@@ -8,6 +8,9 @@
 
 #import "PreferencesController.h"
 
+#define USERNAME_KEY @"user_username_key"
+#define PASSWORD_KEY @"user_password_key"
+
 @implementation PreferencesController
 
 - (id)init
@@ -15,9 +18,40 @@
     self = [super initWithWindowNibName:@"Preferences"];
     if (self) {
         // Initialization code here.
+        
+//        NSLog(@"defaults\n");
+//        NSLog(@"user: %@", [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME_KEY]);
+//        NSLog(@"pass: %@", [[NSUserDefaults standardUserDefaults] stringForKey:PASSWORD_KEY]);
+
+        
+        [username setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:USERNAME_KEY]];
+        [password setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:PASSWORD_KEY]];
+        
+        [username setDelegate:self];
+        [password setDelegate:self];
+        
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self
+               selector:@selector(textDidEndEditing:)
+                   name: NSControlTextDidChangeNotification
+                 object:username];
     }
     
     return self;
+}
+
+-(void)textDidEndEditing:(NSNotification *)notification { 
+//    if ([notification object] == username) {
+//        NSLog(@"user : %@", [username stringValue]);
+//    }else{
+//        NSLog(@"pass : %@", [password stringValue]);
+//    }    
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[username stringValue] forKey:USERNAME_KEY];
+    [defaults setObject:[password stringValue] forKey:PASSWORD_KEY];
+    
+    [defaults synchronize];
 }
 
 //- (void)windowDidLoad
@@ -79,7 +113,6 @@
     currentViewTag = tag;
     
     NSRect newFrame = [self newFrameForNewContentView:view];
-    
     
     [NSAnimationContext beginGrouping];
     
