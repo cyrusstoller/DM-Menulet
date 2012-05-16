@@ -205,8 +205,7 @@
 
 - (IBAction)sendGrowl:(id)sender{
     Class GAB = NSClassFromString(@"GrowlApplicationBridge");
-    [GAB setGrowlDelegate:self];
-    [GAB notifyWithTitle:@"wow" description:@"blah" notificationName:@"USB Device Connected" iconData:[NSData data] priority:0 isSticky:NO clickContext:nil identifier:@"cyro"];
+    [GAB notifyWithTitle:@"wow" description:@"blah" notificationName:@"USB Device Connected" iconData:[NSData data] priority:0 isSticky:NO clickContext:@"cyrus" identifier:@"cyro"];
     NSLog(@"here");
 }
 
