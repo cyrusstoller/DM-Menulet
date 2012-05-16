@@ -116,6 +116,7 @@
 							<string key="NSFrame">{{122, 51}, {178, 17}}</string>
 							<reference key="NSSuperview" ref="465522442"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="621739665">
 								<int key="NSCellFlags">68288064</int>
@@ -255,6 +256,8 @@
 					<string>18.IBPluginDependency</string>
 					<string>19.IBPluginDependency</string>
 					<string>20.IBPluginDependency</string>
+					<string>5.IBNSWindowAutoPositionCentersHorizontal</string>
+					<string>5.IBNSWindowAutoPositionCentersVertical</string>
 					<string>5.IBPluginDependency</string>
 					<string>5.NSWindowTemplate.visibleAtLaunch</string>
 					<string>6.IBPluginDependency</string>
@@ -270,6 +273,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<boolean value="YES"/>
+					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
