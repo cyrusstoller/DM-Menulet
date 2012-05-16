@@ -16,10 +16,17 @@
     IBOutlet NSTextField *username;
     IBOutlet NSSecureTextField *password;
     
+    IBOutlet NSMenuItem *special_directory;
+    
     int currentViewTag;
 }
     
+@property (nonatomic, retain) IBOutlet NSMenuItem *special_directory;
+
 - (IBAction)switchView:(id)sender;
+
+- (IBAction)selectFile:(id)sender;
+
 - (IBAction)openSignUp:(id)sender;
 
 @end

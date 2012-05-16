@@ -10,8 +10,11 @@
 
 #define USERNAME_KEY @"user_username_key"
 #define PASSWORD_KEY @"user_password_key"
+#define SPECIAL_DIRECTORY_KEY @"special_directory_key"
 
 @implementation PreferencesController
+
+@synthesize special_directory;
 
 - (id)init
 {
@@ -23,6 +26,17 @@
 //        NSLog(@"user: %@", [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME_KEY]);
 //        NSLog(@"pass: %@", [[NSUserDefaults standardUserDefaults] stringForKey:PASSWORD_KEY]);
         
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if ([defaults stringForKey:SPECIAL_DIRECTORY_KEY] == nil) {
+            [defaults setObject:[NSHomeDirectory() stringByAppendingPathComponent:@"DataMustard"]
+                         forKey:SPECIAL_DIRECTORY_KEY];
+        }
+        if ([defaults stringForKey:USERNAME_KEY] == nil) {
+            [defaults setObject:@"" forKey:USERNAME_KEY];
+        }
+        if ([defaults stringForKey:PASSWORD_KEY] == nil) {
+            [defaults setObject:@"" forKey:PASSWORD_KEY];
+        }
     }
     
     return self;
@@ -45,6 +59,10 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+    
+    
+    special_directory.title = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults]
+                                                                stringForKey:SPECIAL_DIRECTORY_KEY]];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     NSString *username_text = [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] 
@@ -130,6 +148,28 @@
     [[[self window] animator] setFrame:newFrame display:YES];
     
     [NSAnimationContext endGrouping];
+}
+
+- (IBAction)selectFile:(id)sender{
+    NSOpenPanel *openDialog = [NSOpenPanel openPanel];
+    
+    // Disable the selection of files in the dialog.
+    [openDialog setCanChooseFiles:NO];
+    
+    // Enable the selection of directories in the dialog.
+    [openDialog setCanChooseDirectories:YES];
+    
+    [openDialog setPrompt:@"Select"];
+    
+    
+    if ([openDialog runModalForDirectory:@"~/" file:nil] == NSOKButton) {
+        NSString *filename = [[openDialog filenames] objectAtIndex:0];
+        NSLog(@"filename: %@", filename);
+        special_directory.title = filename;
+        [special_directory.menu performActionForItemAtIndex:0];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:filename forKey:SPECIAL_DIRECTORY_KEY];
+    }
 }
 
 - (IBAction)openSignUp:(id)sender{
