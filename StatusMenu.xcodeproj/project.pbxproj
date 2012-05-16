@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C08F7AB156458AA008331B7 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 0C08F7AA156458AA008331B7 /* Growl Registration Ticket.growlRegDict */; };
+		0C08F7B015645BE2008331B7 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0C08F7AD15645B9F008331B7 /* Growl.framework */; };
 		0CDE3FB7155DD12F001E7360 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDE3FB6155DD12F001E7360 /* About.xib */; };
 		0CDE3FBA155DD890001E7360 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE3FB9155DD890001E7360 /* AboutController.m */; };
 		0CE31912155C61160070329B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE31911155C61160070329B /* Cocoa.framework */; };
@@ -36,8 +37,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0C08F7AF15645BC9008331B7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0C08F7B015645BE2008331B7 /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0C08F7AA156458AA008331B7 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		0C08F7AD15645B9F008331B7 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		0CDE3FB6155DD12F001E7360 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
 		0CDE3FB8155DD890001E7360 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
 		0CDE3FB9155DD890001E7360 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
@@ -121,6 +136,7 @@
 		0CE31910155C61160070329B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C08F7AD15645B9F008331B7 /* Growl.framework */,
 				0CE31911155C61160070329B /* Cocoa.framework */,
 				0CE3192F155C61160070329B /* SenTestingKit.framework */,
 				0CE31913155C61160070329B /* Other Frameworks */,
@@ -204,6 +220,7 @@
 				0CE31909155C61160070329B /* Sources */,
 				0CE3190A155C61160070329B /* Frameworks */,
 				0CE3190B155C61160070329B /* Resources */,
+				0C08F7AF15645BC9008331B7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -416,6 +433,10 @@
 		0CE31941155C61160070329B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StatusMenu/StatusMenu-Prefix.pch";
 				INFOPLIST_FILE = "StatusMenu/StatusMenu-Info.plist";
@@ -427,6 +448,10 @@
 		0CE31942155C61160070329B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StatusMenu/StatusMenu-Prefix.pch";
 				INFOPLIST_FILE = "StatusMenu/StatusMenu-Info.plist";

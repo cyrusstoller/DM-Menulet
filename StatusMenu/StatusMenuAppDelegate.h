@@ -7,11 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <growl/growl.h>
 
 @class PreferencesController;
 @class AboutController;
 
-@interface StatusMenuAppDelegate : NSObject <NSApplicationDelegate> {
+@interface StatusMenuAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate> {
     NSWindow *window;
     IBOutlet NSMenu *statusMenu;
     NSStatusItem *statusItem;

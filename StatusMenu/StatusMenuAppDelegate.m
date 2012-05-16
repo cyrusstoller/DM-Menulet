@@ -21,6 +21,28 @@
     NSDictionary *appDefaults = [NSDictionary
                                  dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"CacheDataAgressively"];
     [_userDefaults registerDefaults:appDefaults];
+    
+    
+    // registering with Growl
+    NSBundle *mainBundle = [NSBundle mainBundle];
+
+    NSString *path = [[mainBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl.framework"];
+	NSLog(@"path: %@", path);
+	NSBundle *growlFramework = [NSBundle bundleWithPath:path];
+	if([growlFramework load])
+	{
+		NSDictionary *infoDictionary = [growlFramework infoDictionary];
+		NSLog(@"Using Growl.framework %@ (%@)",
+			  [infoDictionary objectForKey:@"CFBundleShortVersionString"],
+			  [infoDictionary objectForKey:(NSString *)kCFBundleVersionKey]);
+        
+		Class GAB = NSClassFromString(@"GrowlApplicationBridge");
+		if([GAB respondsToSelector:@selector(setGrowlDelegate:)]){
+            [GAB performSelector:@selector(setGrowlDelegate:) withObject:self];
+        }
+	}
+
+    
 }
 
 -(void)awakeFromNib{
@@ -65,5 +87,41 @@
 -(IBAction)quit:(id)sender{
     [NSApp terminate:nil];
 }
+
+
+#pragma mark -
+#pragma mark Growl
+
+//-(NSDictionary *) registrationDictionaryForGrowl{
+//
+//}
+
+
+- (NSString *) applicationNameForGrowl{
+    return @"Data Mustard";
+}
+
+//- (NSData *) applicationIconDataForGrowl{
+//    
+//}
+
+
+- (void) growlNotificationWasClicked:(id)clickContext{
+    NSLog(@"Notification was clicked");
+}
+
+//- (void) growlNotificationTimedOut:(id)clickContext{
+//    
+//}
+
+// Posting a notification to growl
+//+[GrowlApplicationBridge
+//  notifyWithTitle:(NSString *)title
+//  description:(NSString *)description
+//  notificationName:(NSString *)notificationName
+//  iconData:(NSData *)iconData
+//  priority:(signed int)priority
+//  isSticky:(BOOL)isSticky
+//  clickContext:(id)clickContext]
 
 @end
