@@ -20,5 +20,6 @@
 }
     
 - (IBAction)switchView:(id)sender;
+- (IBAction)openSignUp:(id)sender;
 
 @end

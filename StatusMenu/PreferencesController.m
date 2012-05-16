@@ -132,4 +132,8 @@
     [NSAnimationContext endGrouping];
 }
 
+- (IBAction)openSignUp:(id)sender{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.datamustard.com/users/sign_up"]];
+}
+
 @end

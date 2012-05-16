@@ -120,8 +120,6 @@
 					<int key="NSvFlags">256</int>
 					<string key="NSFrameSize">{506, 109}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{1e+13, 1e+13}</string>
@@ -135,7 +133,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{151, 156}, {89, 32}}</string>
 						<reference key="NSSuperview" ref="312370597"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="686048165">
 							<int key="NSCellFlags">67239424</int>
@@ -158,27 +156,28 @@
 				</array>
 				<string key="NSFrameSize">{506, 266}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="908980150"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSCustomView" id="686826207">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="NSTextField" id="994164824">
+					<object class="NSTextField" id="932525014">
 						<reference key="NSNextResponder" ref="686826207"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{38, 97}, {427, 17}}</string>
+						<string key="NSFrame">{{264, 93}, {186, 17}}</string>
 						<reference key="NSSuperview" ref="686826207"/>
-						<reference key="NSNextKeyView" ref="759992678"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSTextFieldCell" key="NSCell" id="317264962">
+						<object class="NSTextFieldCell" key="NSCell" id="732342716">
 							<int key="NSCellFlags">68288064</int>
 							<int key="NSCellFlags2">272630784</int>
-							<string key="NSContents">Data Mustard Account Info</string>
+							<string key="NSContents">I don't have an account</string>
 							<reference key="NSSupport" ref="752205855"/>
-							<reference key="NSControlView" ref="994164824"/>
-							<object class="NSColor" key="NSBackgroundColor">
+							<reference key="NSControlView" ref="932525014"/>
+							<object class="NSColor" key="NSBackgroundColor" id="234597668">
 								<int key="NSColorSpace">6</int>
 								<string key="NSCatalogName">System</string>
 								<string key="NSColorName">controlColor</string>
@@ -187,7 +186,7 @@
 									<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 								</object>
 							</object>
-							<object class="NSColor" key="NSTextColor">
+							<object class="NSColor" key="NSTextColor" id="848194904">
 								<int key="NSColorSpace">6</int>
 								<string key="NSCatalogName">System</string>
 								<string key="NSColorName">controlTextColor</string>
@@ -198,11 +197,30 @@
 							</object>
 						</object>
 					</object>
+					<object class="NSTextField" id="994164824">
+						<reference key="NSNextResponder" ref="686826207"/>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{56, 93}, {186, 17}}</string>
+						<reference key="NSSuperview" ref="686826207"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="759992678"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTextFieldCell" key="NSCell" id="317264962">
+							<int key="NSCellFlags">68288064</int>
+							<int key="NSCellFlags2">272630784</int>
+							<string key="NSContents">Data Mustard Account Info</string>
+							<reference key="NSSupport" ref="752205855"/>
+							<reference key="NSControlView" ref="994164824"/>
+							<reference key="NSBackgroundColor" ref="234597668"/>
+							<reference key="NSTextColor" ref="848194904"/>
+						</object>
+					</object>
 					<object class="NSSecureTextField" id="158685208">
 						<reference key="NSNextResponder" ref="686826207"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{41, 35}, {170, 22}}</string>
+						<string key="NSFrame">{{59, 31}, {170, 22}}</string>
 						<reference key="NSSuperview" ref="686826207"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSecureTextFieldCell" key="NSCell" id="240624968">
 							<int key="NSCellFlags">343014976</int>
@@ -235,8 +253,9 @@
 					<object class="NSTextField" id="759992678">
 						<reference key="NSNextResponder" ref="686826207"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{41, 67}, {170, 22}}</string>
+						<string key="NSFrame">{{59, 63}, {170, 22}}</string>
 						<reference key="NSSuperview" ref="686826207"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="158685208"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="855998060">
@@ -251,8 +270,31 @@
 							<reference key="NSTextColor" ref="1003151912"/>
 						</object>
 					</object>
+					<object class="NSButton" id="344412494">
+						<reference key="NSNextResponder" ref="686826207"/>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{267, 53}, {180, 25}}</string>
+						<reference key="NSSuperview" ref="686826207"/>
+						<reference key="NSWindow"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSButtonCell" key="NSCell" id="399188008">
+							<int key="NSCellFlags">-2080244224</int>
+							<int key="NSCellFlags2">134217728</int>
+							<string key="NSContents">Sign Up for Data Mustard</string>
+							<reference key="NSSupport" ref="752205855"/>
+							<reference key="NSControlView" ref="344412494"/>
+							<int key="NSButtonFlags">-2038152961</int>
+							<int key="NSButtonFlags2">163</int>
+							<string key="NSAlternateContents"/>
+							<string key="NSKeyEquivalent"/>
+							<int key="NSPeriodicDelay">400</int>
+							<int key="NSPeriodicInterval">75</int>
+						</object>
+					</object>
 				</array>
 				<string key="NSFrameSize">{506, 141}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="994164824"/>
 				<string key="NSClassName">NSView</string>
 			</object>
@@ -322,6 +364,14 @@
 						<reference key="destination" ref="759992678"/>
 					</object>
 					<int key="connectionID">86</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openSignUp:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="344412494"/>
+					</object>
+					<int key="connectionID">91</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -397,9 +447,11 @@
 						<int key="objectID">62</int>
 						<reference key="object" ref="686826207"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="994164824"/>
+							<reference ref="344412494"/>
 							<reference ref="759992678"/>
 							<reference ref="158685208"/>
+							<reference ref="994164824"/>
+							<reference ref="932525014"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Account</string>
@@ -456,6 +508,32 @@
 						<reference key="object" ref="317264962"/>
 						<reference key="parent" ref="994164824"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">87</int>
+						<reference key="object" ref="344412494"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="399188008"/>
+						</array>
+						<reference key="parent" ref="686826207"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">88</int>
+						<reference key="object" ref="399188008"/>
+						<reference key="parent" ref="344412494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">89</int>
+						<reference key="object" ref="932525014"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="732342716"/>
+						</array>
+						<reference key="parent" ref="686826207"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">90</int>
+						<reference key="object" ref="732342716"/>
+						<reference key="parent" ref="932525014"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -484,29 +562,36 @@
 				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="80.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="81.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="87.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="88.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="89.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="90.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">86</int>
+			<int key="maxID">91</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">PreferencesController</string>
 					<string key="superclassName">NSWindowController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">switchView:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">switchView:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="openSignUp:">id</string>
+						<string key="switchView:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="openSignUp:">
+							<string key="name">openSignUp:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="switchView:">
 							<string key="name">switchView:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="account_prefs_view">NSView</string>
 						<string key="general_prefs_view">NSView</string>
