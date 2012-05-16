@@ -180,4 +180,8 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.datamustard.com/users/sign_up"]];
 }
 
+- (IBAction)sendGrowl:(id)sender{
+    [[NSApp delegate] sendGrowl:sender];
+}
+
 @end

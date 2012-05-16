@@ -29,4 +29,6 @@
 
 - (IBAction)openSignUp:(id)sender;
 
+- (IBAction)sendGrowl:(id)sender;
+
 @end

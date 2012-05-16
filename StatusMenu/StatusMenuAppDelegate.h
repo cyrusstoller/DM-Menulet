@@ -30,4 +30,6 @@
 -(IBAction)openAbout:(id)sender;
 -(IBAction)quit:(id)sender;
 
+-(IBAction)sendGrowl:(id)sender;
+
 @end
