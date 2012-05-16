@@ -161,6 +161,8 @@
     
     [openDialog setPrompt:@"Select"];
     
+    // Undocumented method for adding the new folder button
+    [openDialog _setIncludeNewFolderButton:YES];
     
     if ([openDialog runModalForDirectory:@"~/" file:nil] == NSOKButton) {
         NSString *filename = [[openDialog filenames] objectAtIndex:0];
@@ -169,6 +171,8 @@
         [special_directory.menu performActionForItemAtIndex:0];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:filename forKey:SPECIAL_DIRECTORY_KEY];
+    }else{
+        [special_directory.menu performActionForItemAtIndex:0];
     }
 }
 
