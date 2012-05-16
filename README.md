@@ -8,3 +8,6 @@ http://cocoa.flyingmac.com/2010/07/cut-copy-and-paste-in-lsuielement-application
 http://cocoatutorial.grapewave.com/2010/01/creating-a-status-bar-application/
 
 http://www.youtube.com/watch?v=lCIUd-pc1Lg
+
+### How to implement the growl notifications
+http://growl.info/documentation/developer/implementing-growl.php#including-and-linking
