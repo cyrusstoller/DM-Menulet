@@ -48,6 +48,7 @@
 	}
     
     // For registering for fsevents
+    fm = [NSFileManager defaultManager];
     self.lastEventId = (NSNumber *)[_userDefaults objectForKey:LAST_EVENT_ID_KEY];
     // NSLog(@"%lld",[lastEventId unsignedLongLongValue]);
     [self initializeEventStream];
@@ -175,7 +176,7 @@
                 priority:0 
                 isSticky:NO 
             clickContext:@"" 
-              identifier:@"cyro"];
+           /* identifier:@"" */]; // make it show multiple growls
 }
 
 #pragma mark -
