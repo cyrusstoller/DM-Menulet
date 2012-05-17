@@ -51,7 +51,7 @@
     [self initializeEventStream];
 }
 
--(void)awakeFromNib{
+- (void)awakeFromNib{
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
     [statusItem setMenu:statusMenu];
     
@@ -64,15 +64,15 @@
 #pragma mark -
 #pragma mark Menu Actions
 
--(IBAction)openDataMustard:(NSMenuItem *)sender{
+- (IBAction)openDataMustard:(NSMenuItem *)sender{
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.datamustard.com/"]];
 }
 
--(IBAction)openDataMustardFolder:(NSMenuItem *)sender{
+- (IBAction)openDataMustardFolder:(NSMenuItem *)sender{
     [[NSWorkspace sharedWorkspace] openFile:[NSHomeDirectory() stringByAppendingPathComponent:@"DataMustard"]];
 }
 
--(IBAction)openPreferences:(id)sender{
+- (IBAction)openPreferences:(id)sender{
     if (!_preferencesController) {
         _preferencesController = [[PreferencesController alloc] init];
     }    
@@ -84,7 +84,7 @@
     [_preferencesController showWindow:self];    
 }
 
--(IBAction)openAbout:(id)sender{
+- (IBAction)openAbout:(id)sender{
     if (!_aboutController) {
         _aboutController = [[AboutController alloc] init];
     }
@@ -93,7 +93,7 @@
     [_aboutController showWindow:self];
 }
 
--(IBAction)quit:(id)sender{
+- (IBAction)quit:(id)sender{
     [NSApp terminate:nil];
 }
 
