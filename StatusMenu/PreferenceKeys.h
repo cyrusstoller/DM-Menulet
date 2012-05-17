@@ -12,5 +12,7 @@
 #define USERNAME_KEY @"user_username_key"
 #define PASSWORD_KEY @"user_password_key"
 #define SPECIAL_DIRECTORY_KEY @"special_directory_key"
+#define LAST_EVENT_ID_KEY @"lastEventId_key"
+#define PATH_MODIFICATION_DATES_KEY @"pathModificationDates"
 
 #endif
