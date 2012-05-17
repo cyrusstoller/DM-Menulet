@@ -106,7 +106,7 @@
 	[defaultNotifications removeObject:NotifierModifiedFileNotificaiton];
 	
 	NSDictionary *regDict = [NSDictionary dictionaryWithObjectsAndKeys:
-							 @"MultiGrowlExample", GROWL_APP_NAME,
+							 @"Data Mustard Status Bar", GROWL_APP_NAME,
 							 allNotifications, GROWL_NOTIFICATIONS_ALL,
 							 defaultNotifications,	GROWL_NOTIFICATIONS_DEFAULT,
 							 notificationsWithDescriptions,	GROWL_NOTIFICATIONS_HUMAN_READABLE_NAMES,
@@ -119,7 +119,7 @@
 
 
 - (NSString *) applicationNameForGrowl{
-    return @"MultiGrowlExample";
+    return @"Data Mustard Status Bar";
 }
 
 //- (NSData *) applicationIconDataForGrowl{
