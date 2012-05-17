@@ -14,7 +14,7 @@
 
 @implementation StatusMenuAppDelegate
 
-@synthesize window;
+@synthesize window, lastEventId;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -194,14 +194,15 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
     StatusMenuAppDelegate *appDelegate = (StatusMenuAppDelegate *)userData;
     size_t i;
     for(i=0; i < numEvents; i++){
-        [appDelegate updateLastEventId:eventIds[i]];
+        [appDelegate updateLastEventId:(unsigned long long) eventIds[i]];
 //        [appDelegate addModifiedImagesAtPath:[(NSArray *)eventPaths objectAtIndex:i]];
     }
     [appDelegate sendGrowl:nil];
 }
 
-- (void) updateLastEventId:(FSEventStreamEventId)lastId{
-//    lastEventId = [NSNumber numberWithUnsignedLongLong:lastId];
+- (void) updateLastEventId:(unsigned long long)lastId{
+    self.lastEventId = [NSNumber numberWithUnsignedLongLong:lastId];
+//    NSLog(@"%lld --- %lld", [lastEventId unsignedLongLongValue], lastId);    
 }
 
 //- (void) addModifiedImagesAtPath: (NSString *)path

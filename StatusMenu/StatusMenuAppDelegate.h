@@ -28,6 +28,7 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (nonatomic, retain) NSNumber *lastEventId;
 
 -(IBAction)openDataMustard:(id)sender;
 -(IBAction)openDataMustardFolder:(id)sender;
@@ -47,7 +48,7 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
                        void *eventPaths,
                        const FSEventStreamEventFlags eventFlags[],
                        const FSEventStreamEventId eventIds[]);
-- (void) updateLastEventId:(FSEventStreamEventId)lastId;
+- (void) updateLastEventId:(unsigned long long)lastId;
 //- (void) addModifiedImagesAtPath: (NSString *)path;
 - (void) resetFSEvents;
 
