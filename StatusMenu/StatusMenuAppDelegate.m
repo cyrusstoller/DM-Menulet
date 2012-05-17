@@ -16,6 +16,9 @@
 
 @synthesize window, lastEventId;
 
+#pragma mark -
+#pragma mark life cycle
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     _userDefaults = [NSUserDefaults standardUserDefaults];
@@ -57,6 +60,9 @@
     [statusItem setTitle:@"Data Mustard"];
     [statusItem setHighlightMode:YES];
 }
+
+#pragma mark -
+#pragma mark Menu Actions
 
 -(IBAction)openDataMustard:(NSMenuItem *)sender{
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.datamustard.com/"]];
