@@ -14,7 +14,7 @@
 
 @implementation StatusMenuAppDelegate
 
-@synthesize window, lastEventId;
+@synthesize window, lastEventId, pathModificationDates, appStartedTimestamp;
 
 #pragma mark -
 #pragma mark life cycle

@@ -25,10 +25,15 @@
     NSFileManager* fm;
     NSNumber* lastEventId;
     FSEventStreamRef stream;
+    
+    NSMutableDictionary* pathModificationDates;
+    NSDate* appStartedTimestamp;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) NSNumber *lastEventId;
+@property (nonatomic, retain) NSMutableDictionary *pathModificationDates;
+@property (nonatomic, retain) NSDate *appStartedTimestamp;
 
 -(IBAction)openDataMustard:(id)sender;
 -(IBAction)openDataMustardFolder:(id)sender;
