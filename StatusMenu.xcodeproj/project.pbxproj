@@ -52,6 +52,7 @@
 /* Begin PBXFileReference section */
 		0C08DCCE156485380011E972 /* GrowlNotifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifiers.h; sourceTree = "<group>"; };
 		0C08F7AD15645B9F008331B7 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		0C23E2B81564944D00A5B6DA /* PreferenceKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceKeys.h; sourceTree = "<group>"; };
 		0CDE3FB6155DD12F001E7360 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
 		0CDE3FB8155DD890001E7360 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
 		0CDE3FB9155DD890001E7360 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
@@ -205,6 +206,7 @@
 				0CE3194E155C7EB70070329B /* Preferences.xib */,
 				0CE31950155C7EE60070329B /* PreferencesController.h */,
 				0CE31951155C7EE60070329B /* PreferencesController.m */,
+				0C23E2B81564944D00A5B6DA /* PreferenceKeys.h */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";

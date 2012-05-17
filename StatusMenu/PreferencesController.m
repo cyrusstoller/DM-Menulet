@@ -7,10 +7,7 @@
 //
 
 #import "PreferencesController.h"
-
-#define USERNAME_KEY @"user_username_key"
-#define PASSWORD_KEY @"user_password_key"
-#define SPECIAL_DIRECTORY_KEY @"special_directory_key"
+#import "PreferenceKeys.h"
 
 @implementation PreferencesController
 
