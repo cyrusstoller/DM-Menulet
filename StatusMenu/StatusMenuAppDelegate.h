@@ -30,6 +30,7 @@
 -(IBAction)openAbout:(id)sender;
 -(IBAction)quit:(id)sender;
 
--(IBAction)sendGrowl:(id)sender;
+// Growl Interface
+-(void)sendGrowl:(id)sender;
 
 @end

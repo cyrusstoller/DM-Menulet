@@ -146,7 +146,7 @@
 //  clickContext:(id)clickContext]
 
 
-- (IBAction)sendGrowl:(id)sender{
+- (void) sendGrowl:(id)sender{
     Class GAB = NSClassFromString(@"GrowlApplicationBridge");
     [GAB notifyWithTitle:@"wow" 
              description:@"blah" 
