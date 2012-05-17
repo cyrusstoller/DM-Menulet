@@ -9,12 +9,7 @@
 #import "StatusMenuAppDelegate.h"
 #import "PreferencesController.h"
 #import "AboutController.h"
-
-#define NotifierNewFileNotification        @"New File Added"
-#define NotifierModifiedFileNotificaiton   @"File Modified"
-
-#define NotifierNewFileHumanReadableDescription       NSLocalizedString(@"New File Added", "")
-#define NotifierModifiedFileHumanReadableDescription  NSLocalizedString(@"File Modified", "")
+#import "GrowlNotifiers.h"
 
 @implementation StatusMenuAppDelegate
 
