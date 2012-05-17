@@ -50,6 +50,7 @@
     // For registering for fsevents
     fm = [NSFileManager defaultManager];
     self.lastEventId = (NSNumber *)[_userDefaults objectForKey:LAST_EVENT_ID_KEY];
+    pathModificationDates = [[_userDefaults dictionaryForKey:PATH_MODIFICATION_DATES_KEY] mutableCopy];    
     // NSLog(@"%lld",[lastEventId unsignedLongLongValue]);
     [self initializeEventStream];
 }
@@ -214,9 +215,8 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
     size_t i;
     for(i=0; i < numEvents; i++){
         [appDelegate updateLastEventId:(unsigned long long) eventIds[i]];
-//        [appDelegate addModifiedImagesAtPath:[(NSArray *)eventPaths objectAtIndex:i]];
+        [appDelegate addModifiedFilesAtPath:[(NSArray *)eventPaths objectAtIndex:i]];
     }
-    [appDelegate sendGrowl:nil];
 }
 
 - (void) updateLastEventId:(unsigned long long)lastId{
@@ -224,29 +224,59 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
 //    NSLog(@"%lld --- %lld", [lastEventId unsignedLongLongValue], lastId);    
 }
 
-//- (void) addModifiedImagesAtPath: (NSString *)path
-//{
-//    NSArray *contents = [fm contentsOfDirectoryAtPath:path error:nil];
-//    NSString* fullPath = nil;
-//    BOOL addedImage = false;
-//    
-//    for(NSString* node in contents) {
-//        fullPath = [NSString stringWithFormat:@"%@/%@",path,node];
-//        if ([self fileIsImage:fullPath])
-//        {
-//            NSDictionary *fileAttributes =
-//            [fm attributesOfItemAtPath:fullPath error:NULL];
-//            NSDate *fileModDate = [fileAttributes objectForKey:NSFileModificationDate];
-//            if([fileModDate compare:[self lastModificationDateForPath:path]] ==
-//               NSOrderedDescending) {
-//                [images addObject:fullPath];
-//                addedImage = true;
-//            }
-//        }
-//    }
-//    
-//    [self updateLastModificationDateForPath:path];
-//}
+- (void)updateLastModificationDateForPath: (NSString *)path
+{
+    if (!pathModificationDates) {
+        pathModificationDates = [[NSMutableDictionary alloc] initWithObjectsAndKeys:[NSDate date], path, nil];
+    }else{
+        [pathModificationDates setObject:[NSDate date] forKey:path];
+    }
+}
+
+- (NSDate *)lastModificationDateForPath: (NSString *)path
+{
+	if(nil != [pathModificationDates valueForKey:path]) {
+		return [pathModificationDates valueForKey:path];
+	}
+	else{
+		return appStartedTimestamp;
+	}
+}
+
+- (void) addModifiedFilesAtPath: (NSString *)path;
+{
+    NSArray *contents = [fm contentsOfDirectoryAtPath:path error:nil];
+    NSString *fullPath = nil;
+    BOOL addedFile = false;
+    
+    for(NSString* node in contents) {
+        fullPath = [NSString stringWithFormat:@"%@/%@",path,node];
+        if ([self fileIsValid:fullPath])
+        {
+            NSDictionary *fileAttributes = [fm attributesOfItemAtPath:fullPath error:NULL];
+            NSDate *fileModDate = [fileAttributes objectForKey:NSFileModificationDate];
+            if([fileModDate compare:[self lastModificationDateForPath:path]] == NSOrderedDescending) 
+            {
+                NSLog(@"%@", fullPath);
+                addedFile = true;
+            }
+        }
+    }
+    
+    if (addedFile) {
+        // Send growl notification
+        [self sendGrowl:nil];
+    }
+    
+    [self updateLastModificationDateForPath:path];
+}
+
+- (BOOL) fileIsValid: (NSString *) path{
+//    NSWorkspace *sharedWorkspace = [NSWorkspace sharedWorkspace];
+//    return [sharedWorkspace type:[sharedWorkspace typeOfFile:path error:NULL] 
+//                  conformsToType:@"public.image"];
+    return YES;
+}
 
 - (void) resetFSEvents{
     FSEventStreamScheduleWithRunLoop(stream, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);

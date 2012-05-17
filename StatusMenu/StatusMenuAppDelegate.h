@@ -54,7 +54,8 @@ void fsevents_callback(ConstFSEventStreamRef streamRef,
                        const FSEventStreamEventFlags eventFlags[],
                        const FSEventStreamEventId eventIds[]);
 - (void) updateLastEventId:(unsigned long long)lastId;
-//- (void) addModifiedImagesAtPath: (NSString *)path;
+- (void) addModifiedFilesAtPath: (NSString *)path;
+- (BOOL) fileIsValid: (NSString *) path;
 - (void) resetFSEvents;
 
 
