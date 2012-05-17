@@ -161,7 +161,6 @@
                 isSticky:NO 
             clickContext:@"cyrus" 
               identifier:@"cyro"];
-    NSLog(@"here");
 }
 
 @end
