@@ -8,6 +8,7 @@
 
 #import "PreferencesController.h"
 #import "PreferenceKeys.h"
+#import "StatusMenuAppDelegate.h"
 
 @implementation PreferencesController
 
@@ -168,6 +169,8 @@
         [special_directory.menu performActionForItemAtIndex:0];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:filename forKey:SPECIAL_DIRECTORY_KEY];
+        [defaults synchronize];
+        [(StatusMenuAppDelegate *)[NSApp delegate] resetFSEvents];
     }else{
         [special_directory.menu performActionForItemAtIndex:0];
     }

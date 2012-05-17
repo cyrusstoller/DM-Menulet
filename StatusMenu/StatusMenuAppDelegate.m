@@ -10,6 +10,7 @@
 #import "PreferencesController.h"
 #import "AboutController.h"
 #import "GrowlNotifiers.h"
+#import "PreferenceKeys.h"
 
 @implementation StatusMenuAppDelegate
 
@@ -42,8 +43,9 @@
             [GAB performSelector:@selector(setGrowlDelegate:) withObject:self];
         }
 	}
-
     
+    // For registering for fsevents
+    [self initializeEventStream];
 }
 
 -(void)awakeFromNib{
@@ -156,6 +158,81 @@
                 isSticky:NO 
             clickContext:@"" 
               identifier:@"cyro"];
+}
+
+#pragma mark -
+#pragma mark FSEvents
+
+- (void) initializeEventStream
+{
+    NSArray *pathsToWatch = [NSArray arrayWithObject:[_userDefaults stringForKey:SPECIAL_DIRECTORY_KEY]];
+    void *appPointer = (void *)self;
+    FSEventStreamContext context = {0, appPointer, NULL, NULL, NULL};
+    NSTimeInterval latency = 3.0;
+    stream = FSEventStreamCreate(NULL,
+                                 &fsevents_callback,
+                                 &context,
+                                 (CFArrayRef) pathsToWatch,
+                                 [lastEventId unsignedLongLongValue],
+                                 (CFAbsoluteTime) latency,
+                                 kFSEventStreamCreateFlagUseCFTypes
+                                 );
+    
+    FSEventStreamScheduleWithRunLoop(stream,
+                                     CFRunLoopGetCurrent(),
+                                     kCFRunLoopDefaultMode);
+    FSEventStreamStart(stream);
+}
+
+void fsevents_callback(ConstFSEventStreamRef streamRef,
+                       void *userData,
+                       size_t numEvents,
+                       void *eventPaths,
+                       const FSEventStreamEventFlags eventFlags[],
+                       const FSEventStreamEventId eventIds[])
+{
+    StatusMenuAppDelegate *appDelegate = (StatusMenuAppDelegate *)userData;
+    size_t i;
+    for(i=0; i < numEvents; i++){
+        [appDelegate updateLastEventId:eventIds[i]];
+//        [appDelegate addModifiedImagesAtPath:[(NSArray *)eventPaths objectAtIndex:i]];
+    }
+    [appDelegate sendGrowl:nil];
+}
+
+- (void) updateLastEventId:(FSEventStreamEventId)lastId{
+//    lastEventId = [NSNumber numberWithUnsignedLongLong:lastId];
+}
+
+//- (void) addModifiedImagesAtPath: (NSString *)path
+//{
+//    NSArray *contents = [fm contentsOfDirectoryAtPath:path error:nil];
+//    NSString* fullPath = nil;
+//    BOOL addedImage = false;
+//    
+//    for(NSString* node in contents) {
+//        fullPath = [NSString stringWithFormat:@"%@/%@",path,node];
+//        if ([self fileIsImage:fullPath])
+//        {
+//            NSDictionary *fileAttributes =
+//            [fm attributesOfItemAtPath:fullPath error:NULL];
+//            NSDate *fileModDate = [fileAttributes objectForKey:NSFileModificationDate];
+//            if([fileModDate compare:[self lastModificationDateForPath:path]] ==
+//               NSOrderedDescending) {
+//                [images addObject:fullPath];
+//                addedImage = true;
+//            }
+//        }
+//    }
+//    
+//    [self updateLastModificationDateForPath:path];
+//}
+
+- (void) resetFSEvents{
+    FSEventStreamScheduleWithRunLoop(stream, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+    FSEventStreamStop(stream);
+    FSEventStreamInvalidate(stream);
+    [self initializeEventStream];
 }
 
 @end
