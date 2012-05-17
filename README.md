@@ -11,3 +11,6 @@ http://www.youtube.com/watch?v=lCIUd-pc1Lg
 
 ### How to implement the growl notifications
 http://growl.info/documentation/developer/implementing-growl.php#including-and-linking
+
+### FSEvents API
+http://developer.apple.com/library/mac/#featuredarticles/FileSystemEvents/_index.html
