@@ -10,45 +10,11 @@
 #import "PreferencesController.h"
 #import "AboutController.h"
 
-#define NotifierUSBConnectionNotification				@"USB Device Connected"
-#define NotifierUSBDisconnectionNotification			@"USB Device Disconnected"
-#define NotifierVolumeMountedNotification				@"Volume Mounted"
-#define NotifierVolumeUnmountedNotification				@"Volume Unmounted"
-#define NotifierBluetoothConnectionNotification			@"Bluetooth Device Connected"
-#define NotifierBluetoothDisconnectionNotification		@"Bluetooth Device Disconnected"
-#define NotifierFireWireConnectionNotification			@"FireWire Device Connected"
-#define NotifierFireWireDisconnectionNotification		@"FireWire Device Disconnected"
-#define NotifierNetworkLinkUpNotification				@"Network Link Up"
-#define NotifierNetworkLinkDownNotification				@"Network Link Down"
-#define NotifierNetworkIpAcquiredNotification			@"IP Acquired"
-#define NotifierNetworkIpReleasedNotification			@"IP Released"
-#define NotifierNetworkAirportConnectNotification		@"AirPort Connected"
-#define NotifierNetworkAirportDisconnectNotification	@"AirPort Disconnected"
-#define NotifierSyncStartedNotification					@"Sync started"
-#define NotifierSyncFinishedNotification				@"Sync finished"
-#define NotifierPowerOnACNotification					@"Switched to A/C Power"
-#define NotifierPowerOnBatteryNotification				@"Switched to Battery Power"
-#define NotifierPowerOnUPSNotification					@"Switched to UPS Power"
+#define NotifierNewFileNotification        @"New File Added"
+#define NotifierModifiedFileNotificaiton   @"File Modified"
 
-#define NotifierUSBConnectionHumanReadableDescription				NSLocalizedString(@"USB Device Connected", "")
-#define NotifierUSBDisconnectionHumanReadableDescription			NSLocalizedString(@"USB Device Disconnected", "")
-#define NotifierVolumeMountedHumanReadableDescription				NSLocalizedString(@"Volume Mounted", "")
-#define NotifierVolumeUnmountedHumanReadableDescription				NSLocalizedString(@"Volume Unmounted", "")
-#define NotifierBluetoothConnectionHumanReadableDescription			NSLocalizedString(@"Bluetooth Device Connected", "")
-#define NotifierBluetoothDisconnectionHumanReadableDescription		NSLocalizedString(@"Bluetooth Device Disconnected", "")
-#define NotifierFireWireConnectionHumanReadableDescription			NSLocalizedString(@"FireWire Device Connected", "")
-#define NotifierFireWireDisconnectionHumanReadableDescription		NSLocalizedString(@"FireWire Device Disconnected", "")
-#define NotifierNetworkLinkUpHumanReadableDescription				NSLocalizedString(@"Network Link Up", "")
-#define NotifierNetworkLinkDownHumanReadableDescription				NSLocalizedString(@"Network Link Down", "")
-#define NotifierNetworkIpAcquiredHumanReadableDescription			NSLocalizedString(@"IP Acquired", "")
-#define NotifierNetworkIpReleasedHumanReadableDescription			NSLocalizedString(@"IP Released", "")
-#define NotifierNetworkAirportConnectHumanReadableDescription		NSLocalizedString(@"AirPort Connected", "")
-#define NotifierNetworkAirportDisconnectHumanReadableDescription	NSLocalizedString(@"AirPort Disconnected", "")
-#define NotifierSyncStartedHumanReadableDescription					NSLocalizedString(@"Sync started", "")
-#define NotifierSyncFinishedHumanReadableDescription				NSLocalizedString(@"Sync finished", "")
-#define NotifierPowerOnACHumanReadableDescription					NSLocalizedString(@"Switched to A/C Power", "")
-#define NotifierPowerOnBatteryHumanReadableDescription				NSLocalizedString(@"Switched to Battery Power", "")
-#define NotifierPowerOnUPSHumanReadableDescription					NSLocalizedString(@"Switched to UPS Power", "")
+#define NotifierNewFileHumanReadableDescription       NSLocalizedString(@"New File Added", "")
+#define NotifierModifiedFileHumanReadableDescription  NSLocalizedString(@"File Modified", "")
 
 @implementation StatusMenuAppDelegate
 
@@ -134,33 +100,15 @@
 
 - (NSDictionary *) registrationDictionaryForGrowl {
 	NSDictionary *notificationsWithDescriptions = [NSDictionary dictionaryWithObjectsAndKeys:
-												   NotifierUSBConnectionHumanReadableDescription, NotifierUSBConnectionNotification,			
-												   NotifierUSBDisconnectionHumanReadableDescription, NotifierUSBDisconnectionNotification,		
-												   NotifierVolumeMountedHumanReadableDescription, NotifierVolumeMountedNotification,			
-												   NotifierVolumeUnmountedHumanReadableDescription, NotifierVolumeUnmountedNotification,			
-												   NotifierBluetoothConnectionHumanReadableDescription, NotifierBluetoothConnectionNotification,		
-												   NotifierBluetoothDisconnectionHumanReadableDescription, NotifierBluetoothDisconnectionNotification,	
-												   NotifierFireWireConnectionHumanReadableDescription, NotifierFireWireConnectionNotification,		
-												   NotifierFireWireDisconnectionHumanReadableDescription, NotifierFireWireDisconnectionNotification,	
-												   NotifierNetworkLinkUpHumanReadableDescription, NotifierNetworkLinkUpNotification,			
-												   NotifierNetworkLinkDownHumanReadableDescription, NotifierNetworkLinkDownNotification,			
-												   NotifierNetworkIpAcquiredHumanReadableDescription, NotifierNetworkIpAcquiredNotification,		
-												   NotifierNetworkIpReleasedHumanReadableDescription, NotifierNetworkIpReleasedNotification,		
-												   NotifierNetworkAirportConnectHumanReadableDescription, NotifierNetworkAirportConnectNotification,	
-												   NotifierNetworkAirportDisconnectHumanReadableDescription, NotifierNetworkAirportDisconnectNotification,
-												   NotifierSyncStartedHumanReadableDescription, NotifierSyncStartedNotification,				
-												   NotifierSyncFinishedHumanReadableDescription, NotifierSyncFinishedNotification,			
-												   NotifierPowerOnACHumanReadableDescription, NotifierPowerOnACNotification,				
-												   NotifierPowerOnBatteryHumanReadableDescription, NotifierPowerOnBatteryNotification,			
-												   NotifierPowerOnUPSHumanReadableDescription, NotifierPowerOnUPSNotification,				
+                                                   NotifierNewFileHumanReadableDescription, NotifierNewFileNotification,
+                                                   NotifierModifiedFileHumanReadableDescription, NotifierModifiedFileNotificaiton,
 												   nil];
 	
 	NSArray *allNotifications = [notificationsWithDescriptions allKeys];
 	
 	//Don't turn the sync notiifications on by default; they're noisy and not all that interesting.
 	NSMutableArray *defaultNotifications = [allNotifications mutableCopy];
-	[defaultNotifications removeObject:NotifierSyncStartedNotification];
-	[defaultNotifications removeObject:NotifierSyncFinishedNotification];
+	[defaultNotifications removeObject:NotifierModifiedFileNotificaiton];
 	
 	NSDictionary *regDict = [NSDictionary dictionaryWithObjectsAndKeys:
 							 @"MultiGrowlExample", GROWL_APP_NAME,
@@ -205,7 +153,14 @@
 
 - (IBAction)sendGrowl:(id)sender{
     Class GAB = NSClassFromString(@"GrowlApplicationBridge");
-    [GAB notifyWithTitle:@"wow" description:@"blah" notificationName:@"USB Device Connected" iconData:[NSData data] priority:0 isSticky:NO clickContext:@"cyrus" identifier:@"cyro"];
+    [GAB notifyWithTitle:@"wow" 
+             description:@"blah" 
+        notificationName:NotifierNewFileNotification 
+                iconData:[NSData data] 
+                priority:0 
+                isSticky:NO 
+            clickContext:@"cyrus" 
+              identifier:@"cyro"];
     NSLog(@"here");
 }
 
