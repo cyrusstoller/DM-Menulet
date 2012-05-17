@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C08F7AB156458AA008331B7 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 0C08F7AA156458AA008331B7 /* Growl Registration Ticket.growlRegDict */; };
 		0C08F7B015645BE2008331B7 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0C08F7AD15645B9F008331B7 /* Growl.framework */; };
 		0CDE3FB7155DD12F001E7360 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDE3FB6155DD12F001E7360 /* About.xib */; };
 		0CDE3FBA155DD890001E7360 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE3FB9155DD890001E7360 /* AboutController.m */; };
@@ -52,7 +51,6 @@
 
 /* Begin PBXFileReference section */
 		0C08DCCE156485380011E972 /* GrowlNotifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifiers.h; sourceTree = "<group>"; };
-		0C08F7AA156458AA008331B7 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		0C08F7AD15645B9F008331B7 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		0CDE3FB6155DD12F001E7360 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
 		0CDE3FB8155DD890001E7360 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 		0CE31902155C61150070329B = {
 			isa = PBXGroup;
 			children = (
-				0C08F7AA156458AA008331B7 /* Growl Registration Ticket.growlRegDict */,
 				0CE31917155C61160070329B /* StatusMenu */,
 				0CE31934155C61160070329B /* StatusMenuTests */,
 				0CE31910155C61160070329B /* Frameworks */,
@@ -289,7 +286,6 @@
 				0CE31928155C61160070329B /* MainMenu.xib in Resources */,
 				0CE3194F155C7EB70070329B /* Preferences.xib in Resources */,
 				0CDE3FB7155DD12F001E7360 /* About.xib in Resources */,
-				0C08F7AB156458AA008331B7 /* Growl Registration Ticket.growlRegDict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
