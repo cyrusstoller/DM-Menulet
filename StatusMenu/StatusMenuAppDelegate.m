@@ -154,7 +154,7 @@
                 iconData:[NSData data] 
                 priority:0 
                 isSticky:NO 
-            clickContext:@"cyrus" 
+            clickContext:@"" 
               identifier:@"cyro"];
 }
 
