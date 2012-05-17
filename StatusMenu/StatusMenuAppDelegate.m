@@ -48,6 +48,8 @@
 	}
     
     // For registering for fsevents
+    self.lastEventId = (NSNumber *)[_userDefaults objectForKey:LAST_EVENT_ID_KEY];
+    // NSLog(@"%lld",[lastEventId unsignedLongLongValue]);
     [self initializeEventStream];
 }
 
@@ -59,6 +61,16 @@
     //    [statusItem setImage:<#(NSImage *)#>];
     [statusItem setTitle:@"Data Mustard"];
     [statusItem setHighlightMode:YES];
+}
+
+- (NSApplicationTerminateReply)applicationShouldTerminate: (NSApplication *)app
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:lastEventId forKey:LAST_EVENT_ID_KEY];
+    [defaults synchronize];
+    FSEventStreamStop(stream);
+    FSEventStreamInvalidate(stream);
+    return NSTerminateNow;
 }
 
 #pragma mark -
