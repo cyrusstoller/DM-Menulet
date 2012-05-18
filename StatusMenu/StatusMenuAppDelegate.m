@@ -23,8 +23,11 @@
 {
     _userDefaults = [NSUserDefaults standardUserDefaults];
     // Insert code here to initialize your application
-    NSDictionary *appDefaults = [NSDictionary
-                                 dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"CacheDataAgressively"];
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSNumber numberWithBool:YES], @"CacheDataAgressively",
+                                 [NSHomeDirectory() stringByAppendingPathComponent:@"DataMustard"], SPECIAL_DIRECTORY_KEY,
+                                 nil];
+
     [_userDefaults registerDefaults:appDefaults];
     
     // registering growl
