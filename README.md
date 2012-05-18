@@ -14,3 +14,9 @@ http://growl.info/documentation/developer/implementing-growl.php#including-and-l
 
 ### FSEvents API
 http://developer.apple.com/library/mac/#featuredarticles/FileSystemEvents/_index.html
+
+### Clearing the preferences
+
+```
+$ rm ~/Library/Preferences/DataMustard.StatusMenu.plist
+```
