@@ -186,7 +186,7 @@
     NSArray *pathsToWatch = [NSArray arrayWithObject:[_userDefaults stringForKey:SPECIAL_DIRECTORY_KEY]];
     void *appPointer = (void *)self;
     FSEventStreamContext context = {0, appPointer, NULL, NULL, NULL};
-    NSTimeInterval latency = 3.0;
+    NSTimeInterval latency = 1.0;
     stream = FSEventStreamCreate(NULL,
                                  &fsevents_callback,
                                  &context,
