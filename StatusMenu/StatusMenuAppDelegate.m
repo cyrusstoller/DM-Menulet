@@ -27,24 +27,9 @@
                                  dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"CacheDataAgressively"];
     [_userDefaults registerDefaults:appDefaults];
     
-    
-    // registering with Growl
-    NSBundle *mainBundle = [NSBundle mainBundle];
+    // registering growl
+    [GrowlApplicationBridge setGrowlDelegate:self];
 
-    NSString *path = [[mainBundle privateFrameworksPath] stringByAppendingPathComponent:@"Growl.framework"];
-	NSLog(@"path: %@", path);
-	NSBundle *growlFramework = [NSBundle bundleWithPath:path];
-	if([growlFramework load])
-	{
-		NSDictionary *infoDictionary = [growlFramework infoDictionary];
-		NSLog(@"Using Growl.framework %@ (%@)",
-			  [infoDictionary objectForKey:@"CFBundleShortVersionString"],
-			  [infoDictionary objectForKey:(NSString *)kCFBundleVersionKey]);
-        
-		if([GrowlApplicationBridge respondsToSelector:@selector(setGrowlDelegate:)]){
-            [GrowlApplicationBridge setGrowlDelegate:self];
-        }
-	}
     
     // For registering for fsevents
     fm = [NSFileManager defaultManager];
