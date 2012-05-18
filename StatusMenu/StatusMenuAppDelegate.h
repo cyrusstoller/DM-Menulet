@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <growl/growl.h>
+#import <Growl/Growl.h>
 #import <CoreServices/CoreServices.h>
 
 @class PreferencesController;

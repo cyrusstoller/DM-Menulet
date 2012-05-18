@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C08F7B015645BE2008331B7 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0C08F7AD15645B9F008331B7 /* Growl.framework */; };
+		0C08F7B015645BE2008331B7 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C08F7AD15645B9F008331B7 /* Growl.framework */; };
 		0CDE3FB7155DD12F001E7360 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CDE3FB6155DD12F001E7360 /* About.xib */; };
 		0CDE3FBA155DD890001E7360 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CDE3FB9155DD890001E7360 /* AboutController.m */; };
 		0CE31912155C61160070329B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CE31911155C61160070329B /* Cocoa.framework */; };
@@ -43,7 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0C08F7B015645BE2008331B7 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CE31912155C61160070329B /* Cocoa.framework in Frameworks */,
+				0C08F7B015645BE2008331B7 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

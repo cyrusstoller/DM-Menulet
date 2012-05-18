@@ -41,9 +41,8 @@
 			  [infoDictionary objectForKey:@"CFBundleShortVersionString"],
 			  [infoDictionary objectForKey:(NSString *)kCFBundleVersionKey]);
         
-		Class GAB = NSClassFromString(@"GrowlApplicationBridge");
-		if([GAB respondsToSelector:@selector(setGrowlDelegate:)]){
-            [GAB performSelector:@selector(setGrowlDelegate:) withObject:self];
+		if([GrowlApplicationBridge respondsToSelector:@selector(setGrowlDelegate:)]){
+            [GrowlApplicationBridge setGrowlDelegate:self];
         }
 	}
     
@@ -169,8 +168,7 @@
 
 
 - (void) sendGrowl:(id)sender{
-    Class GAB = NSClassFromString(@"GrowlApplicationBridge");
-    [GAB notifyWithTitle:@"wow" 
+    [GrowlApplicationBridge notifyWithTitle:@"wow" 
              description:@"blah" 
         notificationName:NotifierNewFileNotification 
                 iconData:[NSData data] 
